@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="profileBorder">#5EA50000</color>
     <color name="homeBannerBackground">#9FA50000</color>
+
     <color name="galleryBackground">#B4FF8484</color>
     <color name="musicBackground">#B44BBCDF</color>
     <color name="remindersBackground">#B48AECBE</color>

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_weight="2.4"
-        android:background="#B4FF8484"
+        android:background="@color/galleryBackground"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:columnCount="2"
