@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="profileBorder">#5EA50000</color>
+    <color name="homeBannerBackground">#9FA50000</color>
+
+    <color name="galleryBackground">#B4FF8484</color>
+    <color name="musicBackground">#B44BBCDF</color>
+    <color name="remindersBackground">#B48AECBE</color>
+    <color name="gameBackground">#B4FFD744</color>
+    <color name="callBackground">#B4BF8585</color>
+    <color name="clockBackground">#B4D377FA</color>
 </resources>
