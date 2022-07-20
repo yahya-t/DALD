@@ -16,13 +16,16 @@
         android:theme="@style/Theme.DALD"
         tools:targetApi="31">
         <activity
-            android:name=".MusicPlayerActivity"
+            android:name=".MusicPlayer.MusicPlayerActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".Gallery.ImageFullActivity"
+            android:parentActivityName=".Gallery.GalleryActivity"
             android:exported="false" />
         <activity
             android:name=".Gallery.GalleryActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

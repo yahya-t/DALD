@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_gallery.xml" value="0.25" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_gallery.xml" value="0.20261713803292528" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_image_full.xml" value="0.25" />
-        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_main.xml" value="0.24615384615384617" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_music_player.xml" value="0.20261713803292528" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/music_recyler_item.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/row_custom_recycler_item.xml" value="0.1875" />
       </map>
     </option>
