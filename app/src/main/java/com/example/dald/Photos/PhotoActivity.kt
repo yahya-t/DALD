@@ -1,4 +1,4 @@
-package com.example.dald.Gallery
+package com.example.dald.Photos
 
 import android.content.pm.PackageManager
 import android.os.Build
@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dald.R
 
-class GalleryActivity : AppCompatActivity() {
+class PhotoActivity : AppCompatActivity() {
 
     // references the "recycler_image" View object
     private var recyclerImage: RecyclerView? = null
@@ -29,7 +29,7 @@ class GalleryActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gallery)
+        setContentView(R.layout.activity_photo)
 
         hideSystemUI()
         supportActionBar?.hide()

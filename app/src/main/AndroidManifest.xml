@@ -16,15 +16,15 @@
         android:theme="@style/Theme.DALD"
         tools:targetApi="31">
         <activity
-            android:name=".MusicPlayer.MusicPlayerActivity"
+            android:name=".Music.MusicActivity"
             android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Gallery.ImageFullActivity"
-            android:parentActivityName=".Gallery.GalleryActivity"
+            android:name=".Photos.ImageFullActivity"
+            android:parentActivityName=".Photos.PhotoActivity"
             android:exported="false" />
         <activity
-            android:name=".Gallery.GalleryActivity"
+            android:name=".Photos.PhotoActivity"
             android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity

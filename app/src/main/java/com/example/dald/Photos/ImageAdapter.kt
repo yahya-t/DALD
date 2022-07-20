@@ -1,4 +1,4 @@
-package com.example.dald.Gallery
+package com.example.dald.Photos
 
 import android.content.Context
 import android.content.Intent

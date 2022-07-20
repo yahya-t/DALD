@@ -1,4 +1,4 @@
-package com.example.dald.MusicPlayer
+package com.example.dald.Music
 
 import com.example.dald.R
 import android.content.Context
@@ -15,7 +15,7 @@ class MusicListAdapter(var musicList: ArrayList<MusicModel>, var context: Contex
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         var view = LayoutInflater.from(context).inflate(R.layout.music_recyler_item, parent, false)
-        return MusicListAdapter.CustomViewHolder(view)
+        return CustomViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {

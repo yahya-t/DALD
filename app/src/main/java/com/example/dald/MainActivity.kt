@@ -9,8 +9,8 @@ import androidx.annotation.RequiresApi
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import com.example.dald.Gallery.*
-import com.example.dald.MusicPlayer.MusicPlayerActivity
+import com.example.dald.Photos.*
+import com.example.dald.Music.MusicActivity
 
 class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.R)
@@ -23,12 +23,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun galleryCard(view: View) {
-        val intent = Intent(this, GalleryActivity::class.java)
+        val intent = Intent(this, PhotoActivity::class.java)
         startActivity(intent)
     }
 
     fun musicPlayerCard(view: View) {
-        val intent = Intent(this, MusicPlayerActivity::class.java)
+        val intent = Intent(this, MusicActivity::class.java)
         startActivity(intent)
     }
 

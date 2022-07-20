@@ -1,4 +1,4 @@
-package com.example.dald.Gallery
+package com.example.dald.Photos
 
 /**
  * Class which stores the image path and image name

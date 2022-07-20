@@ -1,4 +1,4 @@
-package com.example.dald.Gallery
+package com.example.dald.Photos
 
 import android.content.Intent
 import android.os.Build
@@ -42,7 +42,7 @@ class ImageFullActivity : AppCompatActivity() {
     }
 
     fun backButton(view: View) {
-        val intent = Intent(this, GalleryActivity::class.java)
+        val intent = Intent(this, PhotoActivity::class.java)
         startActivity(intent)
     }
 }
