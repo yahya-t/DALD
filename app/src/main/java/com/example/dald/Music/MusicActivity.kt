@@ -1,7 +1,9 @@
 package com.example.dald.Music
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.database.Cursor
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
@@ -17,14 +19,13 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dald.MainActivity
 import com.example.dald.R
-import com.example.easytutomusicapp.MusicModel
 import java.io.File
-
 
 class MusicActivity : AppCompatActivity() {
 
-    var musicRecylerView: RecyclerView? = null
+    var musicRecyclerView: RecyclerView? = null
     var noMusicTextView: TextView? = null
     var musicList: ArrayList<MusicModel> = ArrayList()
 
@@ -36,40 +37,40 @@ class MusicActivity : AppCompatActivity() {
         hideSystemUI()
         supportActionBar?.hide()
 
-        musicRecylerView = findViewById(R.id.music_RecyclerView)
+        musicRecyclerView = findViewById(R.id.music_RecyclerView)
         noMusicTextView = findViewById(R.id.no_music_text)
 
         if (!checkPermission()) {
             requestPermission()
             return
         }
-
-        var projection = arrayOf(MediaStore.Audio.Media.TITLE,
+        val projection = arrayOf(
+            MediaStore.Audio.Media.TITLE,
             MediaStore.Audio.Media.DATA,
-            MediaStore.Audio.Media.DURATION)
-
-        var selection = MediaStore.Audio.Media.IS_MUSIC + "!=0"
-
-        var cursor = contentResolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection,null,null)
-
-        while (cursor!!.moveToNext()) {
+            MediaStore.Audio.Media.DURATION
+        )
+        val selection = MediaStore.Audio.Media.IS_MUSIC + " != 0"
+        val cursor: Cursor? = contentResolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+            projection,
+            selection,
+            null,
+            null)
+        while (cursor?.moveToNext() == true) {
             val songData = MusicModel(cursor.getString(1), cursor.getString(0), cursor.getString(2))
-            if (File(songData.path).exists()) musicList?.add(songData)
+            if (File(songData.path).exists()) musicList.add(songData)
         }
-
-        if (musicList?.size === 0) {
+        if (musicList.size === 0) {
             noMusicTextView?.visibility = View.VISIBLE
         } else {
             //recyclerview
-            musicRecylerView?.layoutManager = LinearLayoutManager(this)
-            musicRecylerView?.adapter = MusicListAdapter(musicList, applicationContext)
+            musicRecyclerView?.layoutManager = LinearLayoutManager(this)
+            musicRecyclerView?.adapter = MusicListAdapter(musicList, applicationContext)
         }
-
     }
 
     fun checkPermission(): Boolean {
-        var result =
-            ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+        val result = ContextCompat.checkSelfPermission(this,
+            Manifest.permission.READ_EXTERNAL_STORAGE)
         return result == PackageManager.PERMISSION_GRANTED
     }
 
@@ -85,13 +86,26 @@ class MusicActivity : AppCompatActivity() {
             123)
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (musicRecyclerView != null) {
+            musicRecyclerView!!.adapter = MusicListAdapter(musicList, applicationContext)
+        }
+    }
+
     @RequiresApi(Build.VERSION_CODES.R)
     fun hideSystemUI() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         WindowInsetsControllerCompat(window,
             window.decorView.findViewById(android.R.id.content)).let { controller ->
             controller.hide(WindowInsetsCompat.Type.systemBars())
-            controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            controller.systemBarsBehavior =
+                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
+    }
+
+    fun returnHomeFromMusic(view: View) {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }

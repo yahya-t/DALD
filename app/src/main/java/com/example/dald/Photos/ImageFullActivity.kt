@@ -41,7 +41,7 @@ class ImageFullActivity : AppCompatActivity() {
         }
     }
 
-    fun backButton(view: View) {
+    fun returnToGallery(view: View) {
         val intent = Intent(this, PhotoActivity::class.java)
         startActivity(intent)
     }

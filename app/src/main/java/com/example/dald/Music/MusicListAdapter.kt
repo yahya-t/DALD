@@ -1,15 +1,15 @@
 package com.example.dald.Music
 
-import com.example.dald.R
 import android.content.Context
+import android.content.Intent
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.easytutomusicapp.MusicModel
-
+import com.example.dald.R
 
 class MusicListAdapter(var musicList: ArrayList<MusicModel>, var context: Context) : RecyclerView.Adapter<MusicListAdapter.CustomViewHolder>() {
 
@@ -19,10 +19,23 @@ class MusicListAdapter(var musicList: ArrayList<MusicModel>, var context: Contex
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        var musicData = musicList.get(position)
-        holder.titleTextView.setText(musicData.title)
+        val songData: MusicModel = musicList[position]
+        holder.musicTitle.text = songData.title
 
+        if (CustomMediaPlayer.currentIndex == position) {
+            holder.musicTitle.setTextColor(Color.parseColor("#FF0000"))
+        } else {
+            holder.musicTitle.setTextColor(Color.parseColor("#000000"))
+        }
 
+        holder.itemView.setOnClickListener { //navigate to another acitivty
+            CustomMediaPlayer.getInstance()?.reset()
+            CustomMediaPlayer.currentIndex = position
+            val intent = Intent(context, MusicPlayerActivity::class.java)
+            intent.putExtra("LIST", musicList)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -30,12 +43,12 @@ class MusicListAdapter(var musicList: ArrayList<MusicModel>, var context: Contex
     }
 
     class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var titleTextView: TextView
-        var iconImageView: ImageView
+        var musicTitle: TextView
+        var musicIcon: ImageView
 
         init {
-            titleTextView = itemView.findViewById(R.id.music_title)
-            iconImageView = itemView.findViewById(R.id.music_icon)
+            musicTitle = itemView.findViewById(R.id.music_title)
+            musicIcon = itemView.findViewById(R.id.music_icon)
         }
     }
 

@@ -1,5 +1,6 @@
 package com.example.dald.Photos
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dald.MainActivity
 import com.example.dald.R
 
 class PhotoActivity : AppCompatActivity() {
@@ -96,5 +98,12 @@ class PhotoActivity : AppCompatActivity() {
             controller.hide(WindowInsetsCompat.Type.systemBars())
             controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
+    }
+
+    fun returnHomeFromGallery(view: View) {
+        finish()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+
     }
 }
