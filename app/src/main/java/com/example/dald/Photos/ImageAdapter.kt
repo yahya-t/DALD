@@ -1,4 +1,4 @@
-package com.example.dald.Gallery
+package com.example.dald.Photos
 
 import android.content.Context
 import android.content.Intent
@@ -23,7 +23,7 @@ class ImageAdapter (private var context: Context, private var imagesList: ArrayL
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.row_custom_recycler_item, parent, false)
+        val view = inflater.inflate(R.layout.photo_recycler_item, parent, false)
         return ImageViewHolder(view)
     }
 

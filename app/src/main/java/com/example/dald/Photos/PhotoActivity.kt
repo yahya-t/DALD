@@ -1,5 +1,6 @@
-package com.example.dald.Gallery
+package com.example.dald.Photos
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -15,9 +16,10 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dald.MainActivity
 import com.example.dald.R
 
-class GalleryActivity : AppCompatActivity() {
+class PhotoActivity : AppCompatActivity() {
 
     // references the "recycler_image" View object
     private var recyclerImage: RecyclerView? = null
@@ -29,7 +31,7 @@ class GalleryActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gallery)
+        setContentView(R.layout.activity_photo)
 
         hideSystemUI()
         supportActionBar?.hide()
@@ -96,5 +98,12 @@ class GalleryActivity : AppCompatActivity() {
             controller.hide(WindowInsetsCompat.Type.systemBars())
             controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
+    }
+
+    fun returnHomeFromGallery(view: View) {
+        finish()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+
     }
 }

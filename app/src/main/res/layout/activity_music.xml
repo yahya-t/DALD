@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".Photos.ImageFullActivity">
+    android:weightSum="10"
+    tools:context=".Music.MusicActivity">
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="133dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/gallery_banner_background"
+        android:layout_height="200dp"
+        android:layout_weight="2.4"
+        android:background="@drawable/music_banner_background"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:columnCount="2"
         android:padding="5dp"
+        android:layout_marginBottom="10dp"
         android:rowCount="2">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/home_from_music_player"
+            android:id="@+id/home_from_music"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/galleryBackground"
+            android:backgroundTint="@color/musicBackground"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground"
-            android:onClick="returnToGallery"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+            android:onClick="returnHomeFromMusic">
 
             <ImageView
                 android:id="@+id/home"
@@ -40,7 +42,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:padding="10dp"
-                android:src="@drawable/ic_baseline_subdirectory_arrow_left_24" />
+                android:src="@drawable/ic_baseline_home_24" />
 
         </androidx.cardview.widget.CardView>
 
@@ -50,23 +52,46 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="0"
-            android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="Gallery"
             android:textColor="@android:color/white"
             android:textSize="34sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="Music"/>
 
     </GridLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/songs_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Songs"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/no_music_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No songs found...."
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/music_RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/songs_Text"/>
+
+
+    </RelativeLayout>
+
+
 
 </LinearLayout>
