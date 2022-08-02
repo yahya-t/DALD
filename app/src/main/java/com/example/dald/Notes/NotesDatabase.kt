@@ -82,5 +82,4 @@ class NotesDatabase(context: Context) : SQLiteOpenHelper(context, DatabaseName, 
         return notesModelList!!
     }
 
-
 }
