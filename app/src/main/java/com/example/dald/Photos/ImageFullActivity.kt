@@ -42,7 +42,7 @@ class ImageFullActivity : AppCompatActivity() {
     }
 
     fun returnToGallery(view: View) {
-        val intent = Intent(this, PhotoActivity::class.java)
+        val intent = Intent(this, PhotoMainActivity::class.java)
         startActivity(intent)
     }
 }

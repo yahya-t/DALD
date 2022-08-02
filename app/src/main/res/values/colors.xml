@@ -7,13 +7,18 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="profileBorder">#B65050</color>
-    <color name="homeBannerBackground">#9FA50000</color>
 
-    <color name="galleryBackground">#B4FF8484</color>
-    <color name="musicBackground">#B44BBCDF</color>
-    <color name="remindersBackground">#B48AECBE</color>
-    <color name="gameBackground">#B4FFD744</color>
-    <color name="callBackground">#B4BF8585</color>
-    <color name="clockBackground">#B4D377FA</color>
+    <color name="profile_border">#B65050</color>
+    <color name="home_banner_background">#9FA50000</color>
+
+    <color name="positive_button">#03C8DA</color>
+    <color name="negative_button">#F85B4F</color>
+
+    <color name="gallery_background">#B4FF8484</color>
+    <color name="music_background">#B44BBCDF</color>
+    <color name="notes_background">#B48AECBE</color>
+    <color name="notes_item_background">#598AECBE</color>
+    <color name="game_background">#B4FFD744</color>
+    <color name="call_background">#B4BF8585</color>
+    <color name="clock_background">#B4D377FA</color>
 </resources>
