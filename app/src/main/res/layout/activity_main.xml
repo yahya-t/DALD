@@ -14,8 +14,8 @@
         android:layout_weight="2.6"
         android:background="@drawable/home_banner_background"
         android:columnCount="2"
-        android:rowCount="2"
-        android:padding="13dp">
+        android:padding="13dp"
+        android:rowCount="2">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="120dp"
@@ -38,10 +38,10 @@
             android:layout_column="0"
             android:layout_centerInParent="true"
             android:gravity="center"
+            android:text="Hi Joe Bloggs"
             android:textColor="@android:color/white"
             android:textSize="32sp"
-            android:textStyle="bold"
-            android:text="Hi Joe Bloggs" />
+            android:textStyle="bold" />
 
     </GridLayout>
 
@@ -83,18 +83,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/gallery"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/gallery" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Photos"
-                    android:textColor="@android:color/white"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
+                    android:text="Photos"
+                    android:textColor="@android:color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -110,8 +110,8 @@
             android:layout_margin="10dp"
             android:backgroundTint="@color/music_background"
             android:clickable="true"
-            android:onClick="musicPlayerCard"
             android:foreground="?attr/selectableItemBackground"
+            android:onClick="musicPlayerCard"
             app:cardCornerRadius="8dp"
             app:cardElevation="2dp">
 
@@ -126,18 +126,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/music"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/music" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Music"
-                    android:textColor="@android:color/white"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
+                    android:text="Music"
+                    android:textColor="@android:color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -156,8 +156,8 @@
             android:layout_margin="10dp"
             android:backgroundTint="@color/notes_background"
             android:clickable="true"
-            android:onClick="notesCard"
             android:foreground="?attr/selectableItemBackground"
+            android:onClick="notesCard"
             app:cardCornerRadius="8dp"
             app:cardElevation="2dp">
 
@@ -172,18 +172,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/notes"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/notes" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Notes"
-                    android:textColor="@android:color/white"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
+                    android:text="Notes"
+                    android:textColor="@android:color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -214,18 +214,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/gallery"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/gallery" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Music"
-                    android:textColor="@android:color/white"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
+                    android:text="Game"
+                    android:textColor="@android:color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -259,18 +259,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/gallery"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/gallery" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Music"
-                    android:textColor="@android:color/white"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
+                    android:text="Phone"
+                    android:textColor="@android:color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -287,6 +287,7 @@
             android:backgroundTint="@color/clock_background"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground"
+            android:onClick="clockCard"
             app:cardCornerRadius="8dp"
             app:cardElevation="2dp">
 
@@ -301,18 +302,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/gallery"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/clock" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Music"
-                    android:textColor="@android:color/white"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
+                    android:text="Clock"
+                    android:textColor="@android:color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 

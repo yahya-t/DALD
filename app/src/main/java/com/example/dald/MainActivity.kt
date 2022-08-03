@@ -9,6 +9,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import com.example.dald.Clock.ClockMainActivity
 import com.example.dald.Photos.*
 import com.example.dald.Music.MusicMainActivity
 import com.example.dald.Notes.NotesMainActivity
@@ -35,6 +36,11 @@ class MainActivity : AppCompatActivity() {
 
     fun notesCard(view: View) {
         val intent = Intent(this, NotesMainActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun clockCard(view: View) {
+        val intent = Intent(this, ClockMainActivity::class.java)
         startActivity(intent)
     }
 
