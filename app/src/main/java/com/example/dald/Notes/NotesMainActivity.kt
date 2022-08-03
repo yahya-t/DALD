@@ -17,8 +17,11 @@ import com.example.dald.MainActivity
 import com.example.dald.R
 
 class NotesMainActivity : AppCompatActivity() {
-    // create instance if TodoAdapter
-    private lateinit var todoAdapter: NotesAdapter
+
+    private var db: NotesDatabase = NotesDatabase(this)
+    private var notesList: MutableList<NotesModel>? = null
+    private lateinit var notesAdapter: NotesAdapter
+
     lateinit var rvNoteItems: RecyclerView
     lateinit var btnAddNote: Button
     lateinit var etNoteText: EditText
@@ -29,35 +32,52 @@ class NotesMainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notes_main)
 
+        // hide system ui
         hideSystemUI()
         supportActionBar?.hide()
 
-        // initialise todoAdapter
-        todoAdapter = NotesAdapter(mutableListOf())
+        // get notes from db
+        if (db.getAllNotesDB() == null) {
+            notesList = null
+        } else {
+            notesList = db.getAllNotesDB()
+        }
 
+        // initialise notesAdapter
+        notesAdapter = if (notesList == null) {
+            NotesAdapter(mutableListOf())
+        } else {
+            NotesAdapter(notesList!!)
+        }
+
+        // initialise Views
         rvNoteItems = findViewById(R.id.rv_NoteItems)
         btnAddNote = findViewById(R.id.btn_AddNote)
         etNoteText = findViewById(R.id.et_NoteText)
         btnDeleteCompletedNotes = findViewById(R.id.btn_DeleteCompletedNotes)
 
-        // attach todoAdapter to the rvTodoItems RecyclerView
-        rvNoteItems.adapter = todoAdapter
+        // attach notesAdapter to the rvNoteItems RecyclerView
+        rvNoteItems.adapter = notesAdapter
         rvNoteItems.layoutManager = LinearLayoutManager(this)
 
-
-        // set onClickListener for btnAddTodo
+        // set onClickListener for btnAddNote
         btnAddNote.setOnClickListener {
-            val todoTitle = etNoteText.text.toString()
-            if (todoTitle.isNotEmpty()) {
-                val todo = NotesModel(todoTitle)
-                todoAdapter.addTodo(todo)
+            val noteText = etNoteText.text.toString()
+            if (noteText.isNotEmpty()) {
+                val note = NotesModel(noteText)
+                notesAdapter.addNote(note)
+                db.addNoteDB(noteText)
                 etNoteText.text.clear()
             }
         }
 
-        // set onClickListener for btnDeleteDoneTodos
+        // set onClickListener for btnDeleteCompletedNotes
         btnDeleteCompletedNotes.setOnClickListener {
-            todoAdapter.deleteDoneTodos()
+
+            for (note in notesAdapter.isChecked()) {
+                db.deleteNoteDB(note.title)
+            }
+            notesAdapter.deleteCompletedNotes()
         }
     }
 

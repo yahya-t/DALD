@@ -16,16 +16,14 @@ class NotesDatabase(context: Context) : SQLiteOpenHelper(context, DatabaseName, 
     /**** Table Notes ****/
     private val Table_Notes = "Table_Notes"
     private val Column_NotesID = "NotesID"
-    private val Column_NotesText = "Text"
-    private val Column_Checked = "Checked"
+    private val Column_NotesText = "NotesText"
 
 
     override fun onCreate(db: SQLiteDatabase?) {
         try {
             var sqlStatement = "CREATE TABLE " + Table_Notes + " ( " +
                     Column_NotesID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    Column_NotesText + " TEXT NOT NULL, " +
-                    Column_Checked + " INTEGER NOT NULL ) "
+                    Column_NotesText + " TEXT) "
 
             db?.execSQL(sqlStatement)
 
@@ -39,22 +37,28 @@ class NotesDatabase(context: Context) : SQLiteOpenHelper(context, DatabaseName, 
     }
 
 
-    fun addNote(text: String, checked: Int) {
+    fun addNoteDB(text: String) {
         // 'writeableDatabase' method used on this database to allow it to be edited
         val db: SQLiteDatabase = this.writableDatabase
         // ContentValues stores the values which are to be used for the database
         val cv: ContentValues = ContentValues()
         cv.put(Column_NotesText, text)
-        cv.put(Column_Checked, checked)
         // inserts the values from 'cv' (ContentValues()) into the database
         val success = db.insert(Table_Notes, null, cv)
+        db.close()
+    }
+
+    fun deleteNoteDB(note: String) {
+        // writableDatabase for delete actions
+        val db: SQLiteDatabase = this.writableDatabase
+        db.delete(Table_Notes, "$Column_NotesText = \"$note\"", null) == 1
         db.close()
     }
 
     /**
      * Returns the list of NotesModel objects
      */
-    fun getAllNotes(): MutableList<NotesModel> {
+    fun getAllNotesDB(): MutableList<NotesModel> {
         /* try connecting to database */
         val db: SQLiteDatabase
         try {
@@ -66,20 +70,19 @@ class NotesDatabase(context: Context) : SQLiteOpenHelper(context, DatabaseName, 
         val sqlStatement = "SELECT * FROM $Table_Notes"
         val cursor: Cursor = db.rawQuery(sqlStatement, null)
 
-        val notesModelList: MutableList<NotesModel>? = null
+        val notesModelList = mutableListOf<NotesModel>()
 
-        // if QuestionAnswer is found
+        // if note is found
         if (cursor.moveToFirst()) {
-            // do-while loop to add all QuestionAnswers
+            // do-while loop to add all notes
             do {
                 val notesText = cursor.getString(1)
-                val checked = cursor.getString(2)
 
-                val questionAnswer = NotesModel(notesText, checked.toString().toBoolean())
+                val questionAnswer = NotesModel(notesText)
                 notesModelList?.add(questionAnswer)
             } while (cursor.moveToNext())
         }
-        return notesModelList!!
+        return notesModelList
     }
 
 }
