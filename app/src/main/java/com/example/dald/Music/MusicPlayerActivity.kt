@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import com.example.dald.MainActivity
 import com.example.dald.R
 import java.io.IOException
 import java.util.concurrent.TimeUnit
@@ -156,7 +155,7 @@ class MusicPlayerActivity : AppCompatActivity() {
     fun returnToMusic(view: View) {
         mediaPlayer!!.pause()
         finish()
-        val intent = Intent(this, MusicActivity::class.java)
+        val intent = Intent(this, MusicMainActivity::class.java)
         startActivity(intent)
 
     }

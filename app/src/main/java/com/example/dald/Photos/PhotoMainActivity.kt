@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.dald.MainActivity
 import com.example.dald.R
 
-class PhotoActivity : AppCompatActivity() {
+class PhotoMainActivity : AppCompatActivity() {
 
     // references the "recycler_image" View object
     private var recyclerImage: RecyclerView? = null
@@ -31,7 +31,7 @@ class PhotoActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_photo)
+        setContentView(R.layout.activity_photo_main)
 
         hideSystemUI()
         supportActionBar?.hide()

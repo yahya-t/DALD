@@ -23,7 +23,7 @@ import com.example.dald.MainActivity
 import com.example.dald.R
 import java.io.File
 
-class MusicActivity : AppCompatActivity() {
+class MusicMainActivity : AppCompatActivity() {
 
     var musicRecyclerView: RecyclerView? = null
     var noMusicTextView: TextView? = null
@@ -32,7 +32,7 @@ class MusicActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_music)
+        setContentView(R.layout.activity_music_main)
 
         hideSystemUI()
         supportActionBar?.hide()
