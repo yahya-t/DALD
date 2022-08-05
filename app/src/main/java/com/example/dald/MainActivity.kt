@@ -13,6 +13,7 @@ import com.example.dald.Clock.ClockMainActivity
 import com.example.dald.Photos.*
 import com.example.dald.Music.MusicMainActivity
 import com.example.dald.Notes.NotesMainActivity
+import com.example.dald.Phone.PhoneMainActivity
 
 class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.R)
@@ -43,6 +44,12 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, ClockMainActivity::class.java)
         startActivity(intent)
     }
+
+    fun phoneCard(view: View) {
+        val intent = Intent(this, PhoneMainActivity::class.java)
+        startActivity(intent)
+    }
+
 
     @RequiresApi(Build.VERSION_CODES.R)
     fun hideSystemUI() {

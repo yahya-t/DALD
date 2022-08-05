@@ -19,6 +19,6 @@
     <color name="notes_background">#B48AECBE</color>
     <color name="notes_item_background">#598AECBE</color>
     <color name="game_background">#B4FFD744</color>
-    <color name="call_background">#B4BF8585</color>
+    <color name="phone_background">#B4BF8585</color>
     <color name="clock_background">#B4D377FA</color>
 </resources>

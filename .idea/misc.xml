@@ -4,17 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable-v24/clock_banner_background.xml" value="0.252" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable-v24/ic_add.xml" value="0.172" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable-v24/music_banner_background.xml" value="0.2555" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable-v24/notes_banner_background.xml" value="0.2555" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable-v24/phone_banner_background.xml" value="0.252" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable/galler_banner_background.xml" value="0.2545" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable/gallery_banner_background.xml" value="0.252" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable/home_banner_background.xml" value="0.2555" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable/home_banner_border.xml" value="0.2545" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable/ic_account.xml" value="0.172" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2195" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable/ic_baseline_pause_circle_outline_24.xml" value="0.2555" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable/ic_baseline_play_circle_outline_24.xml" value="0.2555" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable/ic_baseline_skip_previous_24.xml" value="0.2555" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_clock_main.xml" value="0.25" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_contact_detail.xml" value="0.2359375" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_create_new_contact.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_gallery.xml" value="0.20261713803292528" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_image_full.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_main.xml" value="0.24615384615384617" />
@@ -23,14 +28,20 @@
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_music_player.xml" value="0.20261713803292528" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_notes.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_notes_main.xml" value="0.25" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_phone_main.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_photo.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_photo_main.xml" value="0.25" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/contact_recycler_item.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/contacts_rv_item.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/item_todo.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/music_recyler_item.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/music_recyler_item_2.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/note_item.xml" value="0.25" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/note_recycler_item.xml" value="0.25" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/phone_list_item.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/photo_recycler_item.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/row_custom_recycler_item.xml" value="0.1875" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/menu/search_menu.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>
