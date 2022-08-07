@@ -24,7 +24,7 @@ import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 
-class PhoneMainActivity : AppCompatActivity() {
+class PhoneMainActivity : AppCompatActivity(), SelectListener {
 
     lateinit var rvContacts: RecyclerView
     lateinit var contactsList: ArrayList<ContactModel>
@@ -45,7 +45,7 @@ class PhoneMainActivity : AppCompatActivity() {
 
         contactsList = ArrayList()
 
-        contactAdapter = ContactAdapter(this, contactsList)
+        contactAdapter = ContactAdapter(this, contactsList, this)
         rvContacts.adapter = contactAdapter
 
         Dexter.withActivity(this)
@@ -96,5 +96,9 @@ class PhoneMainActivity : AppCompatActivity() {
     fun returnHomeFromPhone(view: View) {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+    }
+
+    override fun onItemClicked(contact: ContactModel) {
+        Toast.makeText(this, contact.name, Toast.LENGTH_SHORT).show()
     }
 }
