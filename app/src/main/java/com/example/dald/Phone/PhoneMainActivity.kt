@@ -23,7 +23,6 @@ import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
-import kotlinx.android.synthetic.main.activity_main.*
 
 class PhoneMainActivity : AppCompatActivity() {
 
@@ -77,8 +76,9 @@ class PhoneMainActivity : AppCompatActivity() {
             var number = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
             var numberUri = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.PHOTO_URI))
 
-            var contact = ContactModel(name, number, numberUri)
+            var contact = ContactModel(name, number)
             contactsList.add(contact)
+            contactsList.sortBy { it.name?.toString() }
             contactAdapter.notifyDataSetChanged()
         }
     }

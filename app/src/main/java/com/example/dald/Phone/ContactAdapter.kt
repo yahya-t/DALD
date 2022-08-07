@@ -23,11 +23,11 @@ class ContactAdapter(var context: Context, var contactsList: List<ContactModel>)
         holder.contactName.text = contact.name
         holder.contactNumber.text = contact.number
 
-        if (contact.image != null) {
-            Picasso.get().load(contact.image).into(holder.contactImage)
-        } else {
-            holder.contactImage.setImageResource(R.mipmap.ic_launcher_round)
-        }
+//        if (contact.image != null) {
+//            Picasso.get().load(contact.image).into(holder.contactImage)
+//        } else {
+//            holder.contactImage.setImageResource(R.mipmap.ic_launcher_round)
+//        }
     }
 
     override fun getItemCount(): Int {
