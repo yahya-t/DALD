@@ -15,12 +15,13 @@ import com.example.dald.R
 import java.text.SimpleDateFormat
 import java.util.*
 
-lateinit var tvDate: TextView
-lateinit var dateTime: String
-lateinit var calendar: Calendar
-lateinit var simpleDateFormat: SimpleDateFormat
-
 class ClockMainActivity : AppCompatActivity() {
+
+    lateinit var tvDate: TextView
+    lateinit var dateTime: String
+    lateinit var calendar: Calendar
+    lateinit var simpleDateFormat: SimpleDateFormat
+
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

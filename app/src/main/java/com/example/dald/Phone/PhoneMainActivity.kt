@@ -100,5 +100,10 @@ class PhoneMainActivity : AppCompatActivity(), SelectListener {
 
     override fun onItemClicked(contact: ContactModel) {
         Toast.makeText(this, contact.name, Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, CallActivity::class.java).apply {
+            putExtra("intentContactName", contact.name)
+            putExtra("intentContactNumber", contact.number)
+        }
+        startActivity(intent)
     }
 }
