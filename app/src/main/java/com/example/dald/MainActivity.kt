@@ -10,6 +10,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.example.dald.Clock.ClockMainActivity
+import com.example.dald.Game.GameMainActivity
 import com.example.dald.Photos.*
 import com.example.dald.Music.MusicMainActivity
 import com.example.dald.Notes.NotesMainActivity
@@ -47,6 +48,11 @@ class MainActivity : AppCompatActivity() {
 
     fun phoneCard(view: View) {
         val intent = Intent(this, PhoneMainActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun gameCard(view: View) {
+        val intent = Intent(this, GameMainActivity::class.java)
         startActivity(intent)
     }
 

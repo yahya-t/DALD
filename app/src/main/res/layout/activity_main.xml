@@ -200,6 +200,7 @@
             android:backgroundTint="@color/game_background"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground"
+            android:onClick="gameCard"
             app:cardCornerRadius="8dp"
             app:cardElevation="2dp">
 
