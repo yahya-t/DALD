@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable-v24/clock_banner_background.xml" value="0.252" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable-v24/game_banner_background.xml" value="0.1855" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable-v24/ic_add.xml" value="0.172" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable-v24/music_banner_background.xml" value="0.2555" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable-v24/notes_banner_background.xml" value="0.2555" />
@@ -24,6 +25,7 @@
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_contact_detail.xml" value="0.2359375" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_create_new_contact.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_gallery.xml" value="0.20261713803292528" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_game_main.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_image_full.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_main.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_music.xml" value="0.25" />
