@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dald.R
-import kotlinx.android.synthetic.main.note_item.view.*
+import kotlinx.android.synthetic.main.note_recycler_item.view.*
 
 class NotesAdapter(private val notesList: MutableList<NotesModel>) :
     RecyclerView.Adapter<NotesAdapter.CustomViewHolder>() {
@@ -23,7 +23,7 @@ class NotesAdapter(private val notesList: MutableList<NotesModel>) :
         return CustomViewHolder(
             LayoutInflater.from(parent.context).inflate(
                 // inflate note_item View
-                R.layout.note_item,
+                R.layout.note_recycler_item,
                 parent,
                 false
             )

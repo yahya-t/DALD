@@ -242,9 +242,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="10dp"
-            android:backgroundTint="@color/call_background"
+            android:backgroundTint="@color/phone_background"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground"
+            android:onClick="phoneCard"
             app:cardCornerRadius="8dp"
             app:cardElevation="2dp">
 
@@ -260,7 +261,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
-                    android:src="@drawable/gallery" />
+                    android:src="@drawable/phone" />
 
                 <TextView
                     android:layout_width="wrap_content"

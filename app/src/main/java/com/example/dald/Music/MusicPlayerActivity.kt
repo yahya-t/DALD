@@ -20,6 +20,7 @@ import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 class MusicPlayerActivity : AppCompatActivity() {
+
     lateinit var musicTitle: TextView
     lateinit var musicCurrentTime: TextView
     lateinit var musicTotalTime: TextView
