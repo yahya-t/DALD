@@ -12,16 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_weight="2.4"
-        android:background="@drawable/gallery_banner_background"
+        android:background="@drawable/photos_banner_background"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:columnCount="2"
         android:padding="5dp"
-        android:layout_marginBottom="10dp"
         android:rowCount="2">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/home_from_music_player"
+            android:id="@+id/cv_HomeFromPhotos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -36,7 +35,7 @@
             android:onClick="returnHomeFromGallery">
 
             <ImageView
-                android:id="@+id/home"
+                android:id="@+id/iv_HomeFromPhotos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -47,7 +46,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/galleryTitle"
+            android:id="@+id/tv_PhotoBannerTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_row="0"
@@ -62,7 +61,7 @@
     </GridLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_image"
+        android:id="@+id/rv_Photos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBaseline_toBottomOf="parent"
@@ -72,7 +71,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-        android:id="@+id/progress_recycler"
+        android:id="@+id/pb_PhotosProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

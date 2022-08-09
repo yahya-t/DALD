@@ -20,10 +20,10 @@ import kotlin.properties.Delegates
 
 class GameMainActivity : AppCompatActivity(), View.OnClickListener {
 
+    // variables for Views
     lateinit var playerOneScore: TextView
     lateinit var playerTwoScore: TextView
     lateinit var playerStatus: TextView
-
     lateinit var resetGame: Button
 
     private val buttons = arrayOfNulls<Button>(9)
@@ -54,11 +54,11 @@ class GameMainActivity : AppCompatActivity(), View.OnClickListener {
         hideSystemUI()
         supportActionBar?.hide()
 
-        playerOneScore = findViewById(R.id.playerOneScore)
-        playerTwoScore = findViewById(R.id.playerTwoScore)
-        playerStatus = findViewById(R.id.playerStatus)
+        playerOneScore = findViewById(R.id.tv_PlayerOneScore)
+        playerTwoScore = findViewById(R.id.tv_PlayerTwoScore)
+        playerStatus = findViewById(R.id.tv_PlayerStatus)
 
-        resetGame = findViewById(R.id.restGame)
+        resetGame = findViewById(R.id.btn_RestScore)
 
         for (i in buttons.indices) {
             var buttonID = "btn_$i"

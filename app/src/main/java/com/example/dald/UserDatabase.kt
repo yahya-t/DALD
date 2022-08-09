@@ -35,7 +35,7 @@ class UserDatabase(context: Context) : SQLiteOpenHelper(context, DatabaseName, n
         TODO("Not yet implemented")
     }
 
-    fun addUserNameDB(text: String) {
+    fun addUserDB(text: String) {
         // 'writeableDatabase' method used on this database to allow it to be edited
         val db: SQLiteDatabase = this.writableDatabase
         // ContentValues stores the values which are to be used for the database
@@ -46,31 +46,13 @@ class UserDatabase(context: Context) : SQLiteOpenHelper(context, DatabaseName, n
         db.close()
     }
 
-//    fun addUserDB(name: String, photo: String) {
-//        // 'writeableDatabase' method used on this database to allow it to be edited
-//        val db: SQLiteDatabase = this.writableDatabase
-//        // ContentValues stores the values which are to be used for the database
-//        val cv: ContentValues = ContentValues()
-//        cv.put(Column_UserName, name)
-//        cv.put(Column_UserPhoto, photo)
-//        // inserts the values from 'cv' (ContentValues()) into the database
-//        val success = db.insert(Table_User, null, cv)
-//        db.close()
-//    }
 
-    fun deleteUserDataDB() {
+    fun deleteUserDB() {
         // writableDatabase for delete actions
         val db: SQLiteDatabase = this.writableDatabase
         db.delete(Table_User, null, null)
         db.close()
     }
-
-//    fun deleteUserPhotoDB(photo: String) {
-//        // writableDatabase for delete actions
-//        val db: SQLiteDatabase = this.writableDatabase
-//        db.delete(Table_User, "$Column_UserPhoto = \"$photo\"", null)
-//        db.close()
-//    }
 
     fun getUser(): UserModel {
         val db: SQLiteDatabase = this.readableDatabase

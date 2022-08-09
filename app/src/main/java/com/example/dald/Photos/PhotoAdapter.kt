@@ -11,8 +11,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.dald.R
 
-class ImageAdapter (private var context: Context, private var imagesList: ArrayList<ImagePath>) :
-    RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
+class PhotoAdapter (private var context: Context, private var imagesList: ArrayList<PhotoPath>) :
+    RecyclerView.Adapter<PhotoAdapter.ImageViewHolder>() {
 
     // custom ViewHolder class
     class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -33,7 +33,7 @@ class ImageAdapter (private var context: Context, private var imagesList: ArrayL
         Glide.with(context).load(currentImage.imagePath).apply(RequestOptions().centerCrop()).into(holder.image!!)
 
         holder.image?.setOnClickListener{
-            val intent = Intent(context, ImageFullActivity::class.java)
+            val intent = Intent(context, PhotoFullActivity::class.java)
             intent.putExtra("path", currentImage.imagePath)
             intent.putExtra("name", currentImage.imageName)
             context.startActivity(intent)

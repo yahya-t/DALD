@@ -22,27 +22,28 @@ import com.example.dald.R
 class PhotoMainActivity : AppCompatActivity() {
 
     // references the "recycler_image" View object
-    private var recyclerImage: RecyclerView? = null
+    private var rvPhotos: RecyclerView? = null
     // references the "progress_recycler" View object
-    private var progressBar: ProgressBar? = null
+    private var pbPhotosProgressBar: ProgressBar? = null
     // ArrayList to store all image paths
-    private var allPictures: ArrayList<ImagePath>? = null
+    private var allPictures: ArrayList<PhotoPath>? = null
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_photo_main)
 
+        // hide system ui
         hideSystemUI()
         supportActionBar?.hide()
 
         // initialise fields
-        recyclerImage = findViewById(R.id.recycler_image)
-        progressBar = findViewById(R.id.progress_recycler)
+        rvPhotos = findViewById(R.id.rv_Photos)
+        pbPhotosProgressBar = findViewById(R.id.pb_PhotosProgressBar)
 
         // set properties for recycler_image View
-        recyclerImage?.layoutManager = GridLayoutManager(this, 3)
-        recyclerImage?.setHasFixedSize(true)
+        rvPhotos?.layoutManager = GridLayoutManager(this, 3)
+        rvPhotos?.setHasFixedSize(true)
 
         //Storage Permissions
         if (ContextCompat.checkSelfPermission(
@@ -55,16 +56,16 @@ class PhotoMainActivity : AppCompatActivity() {
 
         // conditions if allPictures is not empty
         if (allPictures!!.isEmpty()) {
-            progressBar?.visibility = View.VISIBLE
+            pbPhotosProgressBar?.visibility = View.VISIBLE
             allPictures = getAllImages()
-            recyclerImage?.adapter = ImageAdapter(this, allPictures!!)
-            progressBar?.visibility = View.GONE
+            rvPhotos?.adapter = PhotoAdapter(this, allPictures!!)
+            pbPhotosProgressBar?.visibility = View.GONE
         }
     }
 
-    private fun getAllImages(): ArrayList<ImagePath>? {
+    private fun getAllImages(): ArrayList<PhotoPath>? {
         // ArrayList to store image paths
-        val images = ArrayList<ImagePath>()
+        val images = ArrayList<PhotoPath>()
 
         val allImageUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
 
@@ -77,7 +78,7 @@ class PhotoMainActivity : AppCompatActivity() {
         try {
             cursor!!.moveToFirst()
             do {
-                val image = ImagePath()
+                val image = PhotoPath()
                 image.imagePath = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA))
                 image.imageName = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DISPLAY_NAME))
                 images.add(image)

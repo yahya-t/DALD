@@ -14,7 +14,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
-import androidx.core.net.toUri
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -25,7 +24,6 @@ import com.example.dald.Photos.*
 import com.example.dald.Music.MusicMainActivity
 import com.example.dald.Notes.NotesMainActivity
 import com.example.dald.Phone.PhoneMainActivity
-import com.google.android.material.imageview.ShapeableImageView
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -71,15 +69,6 @@ class MainActivity : AppCompatActivity() {
         etUserName = findViewById(R.id.et_UserName)
         btnConfirmUserName = findViewById(R.id.btn_ConfirmUserName)
 
-        //assign name from database if exists
-        if (dbUser.getUser().userName == null || dbUser.getUser().userName == "") {
-            dbUser.deleteUserDataDB()
-            dbUser.addUserNameDB("Hello!")
-            tvUserName.text = dbUser.getUser().userName
-        } else {
-            tvUserName.text = "Hi ${dbUser.getUser().userName}"
-        }
-
         tvMainDate = findViewById(R.id.tv_MainDate)
 
         calendar = Calendar.getInstance()
@@ -87,22 +76,31 @@ class MainActivity : AppCompatActivity() {
         dateTime = simpleDateFormat.format(calendar.time).toString()
         tvMainDate.text = dateTime
 
+        //assign name from database if exists
+        if (dbUser.getUser().userName == null || dbUser.getUser().userName == "") {
+            dbUser.deleteUserDB()
+            dbUser.addUserDB("Hello!")
+            tvUserName.text = dbUser.getUser().userName
+        } else if (dbUser.getUser().userName == "Hello!"){
+            tvUserName.text = dbUser.getUser().userName
+        } else {
+            tvUserName.text = "Hi ${dbUser.getUser().userName}"
+        }
+
         // onLongClickListener to change user name
         tvUserName.setOnLongClickListener {
             // adjust visibility of views
             tvUserName.isVisible = false
             etUserName.isVisible = true
             btnConfirmUserName.isVisible = true
-
             etUserName.text = ""
-
             // when confirm button is clicked
             btnConfirmUserName.setOnClickListener {
                 closeKeyboard()
-                dbUser.deleteUserDataDB()
-                dbUser.addUserNameDB("${etUserName.text}")
+                dbUser.deleteUserDB()
+                dbUser.addUserDB("${etUserName.text}")
 
-                if (dbUser.getUser().userName == "") {
+                if (dbUser.getUser().userName == "" || dbUser.getUser().userName == "Hello!") {
                     tvUserName.text = "Hello!"
                 } else {
                     tvUserName.text = "Hi ${dbUser.getUser().userName}"
@@ -118,6 +116,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    /**
+     * Closes the soft keyboard when function is called
+     */
     private fun closeKeyboard() {
         var view = this.currentFocus
         if (view != null) {
@@ -126,6 +127,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Checks if permissions exists and returns a boolean
+     *
+     * @param context the context of the activity
+     * @param PERMISSIONS the array of permissions to request
+     */
     private fun hasPermissions(context: Context, PERMISSIONS: Array<String>): Boolean {
         if (context != null && PERMISSIONS != null) {
             for (permission in PERMISSIONS) {
@@ -137,6 +144,9 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    /**
+     * Requests permissions
+     */
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -200,6 +210,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    /**
+     * Function to hide the notification bar and navigation bar
+     */
     @RequiresApi(Build.VERSION_CODES.R)
     fun hideSystemUI() {
         WindowCompat.setDecorFitsSystemWindows(window, false)

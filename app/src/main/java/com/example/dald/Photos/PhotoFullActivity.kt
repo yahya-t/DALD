@@ -15,12 +15,12 @@ import com.example.dald.R
 /**
  * Class to display image in full screen
  */
-class ImageFullActivity : AppCompatActivity() {
+class PhotoFullActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_image_full)
+        setContentView(R.layout.activity_photo_full)
 
         // hide system ui
         hideSystemUI()
