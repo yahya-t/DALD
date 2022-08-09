@@ -19,19 +19,21 @@ import androidx.core.view.WindowInsetsControllerCompat
 import com.example.dald.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class CallActivity : AppCompatActivity() {
+class PhoneCallActivity : AppCompatActivity() {
 
     lateinit var intentContactName: String
     lateinit var intentContactNumber: String
 
     lateinit var tvContactNameFromIntent: TextView
+    lateinit var tvContactNumberFromIntent: TextView
+
     lateinit var fabCall: FloatingActionButton
     private val REQUEST_CALL = 1
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_call)
+        setContentView(R.layout.activity_phone_call)
 
         // hide system ui
         hideSystemUI()
@@ -41,9 +43,12 @@ class CallActivity : AppCompatActivity() {
         intentContactName = intent.getStringExtra("intentContactName").toString()
         intentContactNumber = intent.getStringExtra("intentContactNumber").toString()
 
-        // assign intentContactName to the TextView
+        // assign intent values to the TextViews
         tvContactNameFromIntent = findViewById(R.id.tv_ContactNameFromIntent)
         tvContactNameFromIntent.text = intentContactName
+
+        tvContactNumberFromIntent = findViewById(R.id.tv_ContactNumberFromIntent)
+        tvContactNumberFromIntent.text = intentContactNumber
 
         fabCall = findViewById(R.id.fab_Call)
 

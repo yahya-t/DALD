@@ -15,19 +15,21 @@ import com.example.dald.R
 /**
  * Class to display image in full screen
  */
-class ImageFullActivity : AppCompatActivity() {
+class PhotoFullActivity : AppCompatActivity() {
+
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_image_full)
+        setContentView(R.layout.activity_photo_full)
 
+        // hide system ui
         hideSystemUI()
         supportActionBar?.hide()
 
+        // get image path from intent
         val imagePath = intent.getStringExtra("path")
-        val imageName = intent.getStringExtra("name")
 
-//        supportActionBar?.title = imageName
+        // attach to Glide object
         Glide.with(this).load(imagePath).into(findViewById(R.id.imageView))
     }
 

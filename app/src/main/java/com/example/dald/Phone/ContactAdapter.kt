@@ -1,5 +1,6 @@
 package com.example.dald.Phone
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +19,7 @@ class ContactAdapter(var context: Context, var contactsList: List<ContactModel>,
         return ContactViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ContactViewHolder, @SuppressLint("RecyclerView") position: Int) {
         var contact = contactsList[position]
         holder.contactName.text = contact.name
         holder.contactNumber.text = contact.number
@@ -46,7 +47,6 @@ class ContactAdapter(var context: Context, var contactsList: List<ContactModel>,
     class ContactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var contactName: TextView = itemView.findViewById(R.id.tv_ContactName)
         var contactNumber: TextView = itemView.findViewById(R.id.tv_ContactNumber)
-        var contactImage: CircleImageView = itemView.findViewById(R.id.civ_ContactImage)
         var contactCard: CardView = itemView.findViewById(R.id.cv_ContactCard)
     }
 }

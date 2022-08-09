@@ -22,7 +22,7 @@
             android:name=".Game.GameMainActivity"
             android:exported="false" />
         <activity
-            android:name=".Phone.CallActivity"
+            android:name=".Phone.PhoneCallActivity"
             android:exported="false" />
         <activity
             android:name=".Phone.PhoneMainActivity"
@@ -42,7 +42,7 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Photos.ImageFullActivity"
+            android:name=".Photos.PhotoFullActivity"
             android:exported="false"
             android:parentActivityName=".Photos.PhotoMainActivity" />
         <activity

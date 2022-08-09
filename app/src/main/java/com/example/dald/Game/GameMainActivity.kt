@@ -20,11 +20,11 @@ import kotlin.properties.Delegates
 
 class GameMainActivity : AppCompatActivity(), View.OnClickListener {
 
-    lateinit var playerOneScore: TextView
-    lateinit var playerTwoScore: TextView
-    lateinit var playerStatus: TextView
-
-    lateinit var resetGame: Button
+    // variables for Views
+    lateinit var tvPlayerOneScore: TextView
+    lateinit var tvPlayerTwoScore: TextView
+    lateinit var tvPlayerStatus: TextView
+    lateinit var btnResetScore: Button
 
     private val buttons = arrayOfNulls<Button>(9)
 
@@ -54,11 +54,11 @@ class GameMainActivity : AppCompatActivity(), View.OnClickListener {
         hideSystemUI()
         supportActionBar?.hide()
 
-        playerOneScore = findViewById(R.id.playerOneScore)
-        playerTwoScore = findViewById(R.id.playerTwoScore)
-        playerStatus = findViewById(R.id.playerStatus)
+        tvPlayerOneScore = findViewById(R.id.tv_PlayerOneScore)
+        tvPlayerTwoScore = findViewById(R.id.tv_PlayerTwoScore)
+        tvPlayerStatus = findViewById(R.id.tv_PlayerStatus)
 
-        resetGame = findViewById(R.id.restGame)
+        btnResetScore = findViewById(R.id.btn_RestScore)
 
         for (i in buttons.indices) {
             var buttonID = "btn_$i"
@@ -115,19 +115,19 @@ class GameMainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         if(playerOneScoreCount > playerTwoScoreCount) {
-            playerStatus.text = "X is Winning!"
+            tvPlayerStatus.text = "X is Winning!"
         } else if (playerTwoScoreCount > playerOneScoreCount) {
-            playerStatus.text = "O is Winning!"
+            tvPlayerStatus.text = "O is Winning!"
         } else {
-            playerStatus.text = ""
+            tvPlayerStatus.text = ""
         }
 
-        resetGame.setOnClickListener(object: View.OnClickListener {
+        btnResetScore.setOnClickListener(object: View.OnClickListener {
             override fun onClick(v: View?) {
                 playAgain()
                 playerOneScoreCount = 0
                 playerTwoScoreCount = 0
-                playerStatus.text = ""
+                tvPlayerStatus.text = ""
                 updatePlayerScore()
             }
 
@@ -148,8 +148,8 @@ class GameMainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     fun updatePlayerScore() {
-        playerOneScore.text = playerOneScoreCount.toString()
-        playerTwoScore.text = playerTwoScoreCount.toString()
+        tvPlayerOneScore.text = playerOneScoreCount.toString()
+        tvPlayerTwoScore.text = playerTwoScoreCount.toString()
     }
 
     fun playAgain() {

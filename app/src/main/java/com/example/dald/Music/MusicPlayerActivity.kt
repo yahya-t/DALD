@@ -21,14 +21,14 @@ import java.util.concurrent.TimeUnit
 
 class MusicPlayerActivity : AppCompatActivity() {
 
-    lateinit var musicTitle: TextView
-    lateinit var musicCurrentTime: TextView
-    lateinit var musicTotalTime: TextView
-    lateinit var musicSeekBar: SeekBar
-    lateinit var musicPlayerImage: ImageView
-    lateinit var musicPause: ImageView
-    lateinit var musicPrevious: ImageView
-    lateinit var musicNext: ImageView
+    lateinit var tvMusicPlayerSongTitle: TextView
+    lateinit var tvMusicCurrentTime: TextView
+    lateinit var tvMusicTotalTime: TextView
+    lateinit var sbMusicPlayerSeekBar: SeekBar
+    lateinit var ivMusicPlayerImage: ImageView
+    lateinit var ivPauseMusic: ImageView
+    lateinit var ivPreviousMusic: ImageView
+    lateinit var ivNextMusic: ImageView
 
     lateinit var musicList: ArrayList<MusicModel>
     lateinit var currentMusic: MusicModel
@@ -43,14 +43,14 @@ class MusicPlayerActivity : AppCompatActivity() {
         hideSystemUI()
         supportActionBar?.hide()
 
-        musicTitle = findViewById(R.id.music_player_title)
-        musicCurrentTime = findViewById(R.id.music_current_time)
-        musicTotalTime = findViewById(R.id.music_total_time)
-        musicSeekBar = findViewById(R.id.music_seek_bar)
-        musicPlayerImage = findViewById(R.id.music_player_image)
-        musicPause = findViewById(R.id.music_pause)
-        musicPrevious = findViewById(R.id.music_previous)
-        musicNext = findViewById(R.id.music_next)
+        tvMusicPlayerSongTitle = findViewById(R.id.tv_MusicPlayerSongTitle)
+        tvMusicCurrentTime = findViewById(R.id.tv_MusicCurrentTime)
+        tvMusicTotalTime = findViewById(R.id.tv_MusicTotalTime)
+        sbMusicPlayerSeekBar = findViewById(R.id.sb_MusicPlayerSeekBar)
+        ivMusicPlayerImage = findViewById(R.id.iv_MusicPlayerImage)
+        ivPauseMusic = findViewById(R.id.iv_PauseMusic)
+        ivPreviousMusic = findViewById(R.id.iv_PreviousMusic)
+        ivNextMusic = findViewById(R.id.iv_NextMusic)
 
         musicList = intent.getSerializableExtra("LIST") as ArrayList<MusicModel>
 
@@ -59,21 +59,21 @@ class MusicPlayerActivity : AppCompatActivity() {
         runOnUiThread(object : Runnable {
             override fun run() {
                 if (mediaPlayer != null) {
-                    musicSeekBar?.progress = mediaPlayer!!.currentPosition
-                    musicCurrentTime?.text = convertToMMSS(mediaPlayer!!.currentPosition.toString() + "")
+                    sbMusicPlayerSeekBar?.progress = mediaPlayer!!.currentPosition
+                    tvMusicCurrentTime?.text = convertToMMSS(mediaPlayer!!.currentPosition.toString() + "")
                     if (mediaPlayer!!.isPlaying) {
-                        musicPause?.setImageResource(R.drawable.ic_baseline_pause_circle_outline_24)
-                        musicPlayerImage?.rotation = x++.toFloat()
+                        ivPauseMusic?.setImageResource(R.drawable.ic_baseline_pause_circle_outline_24)
+                        ivMusicPlayerImage?.rotation = x++.toFloat()
                     } else {
-                        musicPause?.setImageResource(R.drawable.ic_baseline_play_circle_outline_24)
-                        musicPlayerImage?.rotation = 0F
+                        ivPauseMusic?.setImageResource(R.drawable.ic_baseline_play_circle_outline_24)
+                        ivMusicPlayerImage?.rotation = 0F
                     }
                 }
                 Handler().postDelayed(this, 100)
             }
         })
 
-        musicSeekBar?.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
+        sbMusicPlayerSeekBar?.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 if (mediaPlayer != null && fromUser) {
                     mediaPlayer!!.seekTo(progress)
@@ -88,11 +88,11 @@ class MusicPlayerActivity : AppCompatActivity() {
 
     private fun setResourcesWithMusic() {
         currentMusic = musicList[CustomMediaPlayer.currentIndex]
-        musicTitle!!.text = currentMusic?.title
-        musicTotalTime?.text = currentMusic?.duration?.let { convertToMMSS(it) }
-        musicPause?.setOnClickListener { pausePlay() }
-        musicNext?.setOnClickListener { playNextSong() }
-        musicPrevious?.setOnClickListener { playPreviousSong() }
+        tvMusicPlayerSongTitle!!.text = currentMusic?.title
+        tvMusicTotalTime?.text = currentMusic?.duration?.let { convertToMMSS(it) }
+        ivPauseMusic?.setOnClickListener { pausePlay() }
+        ivNextMusic?.setOnClickListener { playNextSong() }
+        ivPreviousMusic?.setOnClickListener { playPreviousSong() }
         playMusic()
     }
 
@@ -103,8 +103,8 @@ class MusicPlayerActivity : AppCompatActivity() {
             mediaPlayer?.setDataSource(currentMusic?.path)
             mediaPlayer?.prepare()
             mediaPlayer?.start()
-            musicSeekBar?.progress = 0
-            musicSeekBar?.max = mediaPlayer!!.duration
+            sbMusicPlayerSeekBar?.progress = 0
+            sbMusicPlayerSeekBar?.max = mediaPlayer!!.duration
         } catch (e: IOException) {
             e.printStackTrace()
         }

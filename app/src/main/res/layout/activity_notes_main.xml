@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:keepScreenOn="true"
     android:orientation="vertical"
     android:weightSum="10"
     tools:context=".Notes.NotesMainActivity">
@@ -69,19 +70,9 @@
             android:id="@+id/rv_NoteItems"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/et_NoteText"
+            app:layout_constraintBottom_toTopOf="@+id/btn_AddNote"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/et_NoteText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="Type your note here..."
-            app:layout_constraintBottom_toTopOf="@id/btn_AddNote"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btn_AddNote"
@@ -91,7 +82,7 @@
             android:padding="10dp"
             android:text="Add Note"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/et_NoteText"
             app:layout_constraintEnd_toStartOf="@+id/btn_DeleteCompletedNotes"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -103,9 +94,19 @@
             android:padding="10dp"
             android:text="Delete Done"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/et_NoteText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btn_AddNote" />
+
+        <EditText
+            android:id="@+id/et_NoteText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Type your note here..."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

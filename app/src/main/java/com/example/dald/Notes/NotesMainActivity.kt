@@ -1,10 +1,12 @@
 package com.example.dald.Notes
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import androidx.annotation.RequiresApi
@@ -62,6 +64,7 @@ class NotesMainActivity : AppCompatActivity() {
 
         // set onClickListener for btnAddNote
         btnAddNote.setOnClickListener {
+            closeKeyboard()
             val noteText = etNoteText.text.toString()
             if (noteText.isNotEmpty()) {
                 val note = NotesModel(noteText)
@@ -78,6 +81,14 @@ class NotesMainActivity : AppCompatActivity() {
                 db.deleteNoteDB(note.title)
             }
             notesAdapter.deleteCompletedNotes()
+        }
+    }
+
+    fun closeKeyboard() {
+        var view = this.currentFocus
+        if (view != null) {
+            var imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
         }
     }
 
