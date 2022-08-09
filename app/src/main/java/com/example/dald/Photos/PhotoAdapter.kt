@@ -14,10 +14,11 @@ import com.example.dald.R
 class ImageAdapter (private var context: Context, private var imagesList: ArrayList<ImagePath>) :
     RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 
+    // custom ViewHolder class
     class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var image: ImageView? = null
         init {
-            image = itemView.findViewById(R.id.image_row)
+            image = itemView.findViewById(R.id.iv_ImageRow)
         }
     }
 
