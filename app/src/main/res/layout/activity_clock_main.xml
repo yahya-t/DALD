@@ -68,15 +68,13 @@
 
         <TextView
             android:id="@+id/tv_Date"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginHorizontal="10dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/clock_banner_background"
+            android:background="@color/clock_background"
             android:paddingHorizontal="70dp"
             android:paddingVertical="10dp"
-            android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             tools:text="\t\t\t\t\tMonday\n1 January 2022" />
@@ -99,11 +97,10 @@
             android:layout_marginHorizontal="10dp"
             android:layout_marginLeft="140dp"
             android:layout_marginTop="50dp"
-            android:background="@drawable/clock_banner_background"
+            android:background="@color/clock_background"
             android:format24Hour="h:mm a"
             android:paddingHorizontal="70dp"
             android:paddingVertical="10dp"
-            android:textColor="@android:color/black"
             android:textSize="40sp"
             android:textStyle="bold" />
 

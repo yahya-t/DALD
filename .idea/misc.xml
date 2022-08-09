@@ -23,7 +23,7 @@
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable/ic_baseline_skip_previous_24.xml" value="0.2555" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/drawable/phone_banner_background.xml" value="0.1505" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_call.xml" value="0.264" />
-        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_clock_main.xml" value="0.2" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_clock_main.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_contact_detail.xml" value="0.2359375" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_create_new_contact.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_gallery.xml" value="0.20261713803292528" />
@@ -35,6 +35,7 @@
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_music_player.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_notes.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_notes_main.xml" value="0.25" />
+        <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_phone_call.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_phone_intent_test.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_phone_main.xml" value="0.25" />
         <entry key="..\:/Users/yahya/AndroidStudioProjects/DALD/app/src/main/res/layout/activity_photo.xml" value="0.25" />

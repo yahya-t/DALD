@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:keepScreenOn="true"
     android:orientation="vertical"
     android:weightSum="10"
     tools:context=".Music.MusicMainActivity">
@@ -71,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:padding="10dp"
-            android:text="Playlist"
+            android:text="What do you want to listen to?"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -87,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_MusicListTitle"
-            android:background="@color/music_background"/>
+            android:background="@color/music_background" />
 
 
     </RelativeLayout>

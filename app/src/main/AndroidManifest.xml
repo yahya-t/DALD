@@ -22,7 +22,7 @@
             android:name=".Game.GameMainActivity"
             android:exported="false" />
         <activity
-            android:name=".Phone.CallActivity"
+            android:name=".Phone.PhoneCallActivity"
             android:exported="false" />
         <activity
             android:name=".Phone.PhoneMainActivity"
