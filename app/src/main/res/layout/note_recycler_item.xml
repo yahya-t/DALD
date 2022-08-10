@@ -7,16 +7,33 @@
     android:background="@color/notes_item_background"
     android:paddingEnd="8dp">
 
-    <CheckBox
-        android:id="@+id/cb_Complete"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_CheckNoteCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        android:background="@color/notes_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/tv_NoteText"
+        android:layout_margin="5dp"
+        android:clickable="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/tv_NoteText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:id="@+id/cb_Complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/notes_background" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tv_NoteText"
@@ -24,9 +41,10 @@
         android:layout_height="wrap_content"
         android:text="Example"
         android:textSize="24sp"
+        android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cb_Complete"
+        app:layout_constraintStart_toEndOf="@+id/cv_CheckNoteCard"
         app:layout_constraintTop_toTopOf="parent" />
 
 
